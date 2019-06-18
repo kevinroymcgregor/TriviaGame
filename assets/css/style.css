@@ -1,0 +1,25 @@
+h1, h2{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#submit, .questions, #iToldYouNotTo, #dontPush{
+    display: none;
+}
+
+.container{
+    max-width: 720px;
+    min-height: 420px;
+    background-color: rgba(229, 255, 200, 0.75);
+    margin-top: 20px;
+}
+
+body{
+    background-image: url(../images/milky-way-2695569_960_720.jpg);
+}
+
+button{
+    padding: 25px;
+    margin: 15px;
+}
+
