@@ -16,6 +16,7 @@ h1, h2{
 
 body{
     background-image: url(../images/milky-way-2695569_960_720.jpg);
+    background-size: cover;
 }
 
 button{
