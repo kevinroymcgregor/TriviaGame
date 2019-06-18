@@ -4,7 +4,8 @@ let numBlank = 0;
 let returned = false;
 let timer;
 let clock;
-let time = 1000 * 60;
+const timeConst = 60;
+let time = timeConst
 const audio = new Audio("assets/audio/nmh_scream1.mp3");
 
 const scoring = function(){
@@ -37,7 +38,7 @@ const scoring = function(){
 
     hideQs();
     returned = true;
-    time = 1000 * 60;
+    time = timeConst;
 
     const cDiv = $('<div>')
     cDiv.html('Number Correct: ' + numCorrect);
@@ -79,9 +80,9 @@ const showQs = function(){
 function timeConverter(t) {
 
     console.log(t);
-    let minutes = Math.floor(t / 60000);
+    let minutes = Math.floor(t / 60);
     console.log(minutes);
-    let seconds = (Math.floor(t / 1000)) - (minutes * 60);
+    let seconds = t - (minutes * 60);
     console.log(seconds);
   
     if (seconds < 10) {
@@ -107,7 +108,7 @@ function countDown(){
 
 $('#start').on('click', function(){
     showQs();
-    setTimeout(timer, time);
+    setTimeout(timer, (time * 1000));
     function timer(){
         if(returned === false){
             scoring();
@@ -128,6 +129,6 @@ $('#dontPush').on("click", function(){
     hideQs();
     clearTimeout(timer);
     clearInterval(clock);
-    time = 1000 * 60;
+    time = timeConst;
 })
 
